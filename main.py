@@ -112,11 +112,14 @@ def go(config: DictConfig):
 
         if "test_regression_model" in active_steps:
 
-            ##################
-            # Implement here #
-            ##################
-
-            pass
+            _ = mlflow.run(
+                os.path.join(root_path, "src", "test_regression_model"),
+                "main",
+                parameters={
+                    "model_artifact": "random_forest_export:PROD", 
+                    "test_data": "test_data.csv:latest"
+                }
+            )
 
 
 if __name__ == "__main__":

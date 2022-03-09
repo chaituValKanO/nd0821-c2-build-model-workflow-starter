@@ -6,13 +6,13 @@ entry_points:
     parameters:
 
       model_artifact:
-        description: ## ADD DESCRIPTION
+        description: The prod model artifact used for prediction
         type: string
 
-       test_data:
-        description: ## ADD DESCRIPTION
+      test_data:
+        description: The test data on which model artifact will predict
         type: string
 
 
     command: >-
-        python run.py  --model_artifact {model_artifact}  -- test_data { test_data} 
+        python run.py  --model_artifact {model_artifact}  --test_data {test_data} 
