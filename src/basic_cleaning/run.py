@@ -37,7 +37,8 @@ def go(args):
                     type=args.output_type,
                     description=args.output_description)
     
-    artifact.add_file("clean_smaple.csv")
+    artifact.add_file("clean_sample.csv")
+    logger.info("Uploading the cleaned artifact to wandb")
     run.log_artifact(artifact)
 
 
